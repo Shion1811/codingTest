@@ -27,7 +27,6 @@ a:hover{
 	--h2:24px,font-family: 'Noto Sans JP', sans-serif;
 	--h3:18px,font-family: 'Noto Sans JP', sans-serif;
 	--p:14px,font-family: 'sans-serif', sans-serif ;
-	
 }
 
 /*header*/
@@ -61,15 +60,19 @@ header{
     margin-right: 10px;
 }
 .sns-nav{
-	text-align: right;
+	text-align: center;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 }
 .sns-nav li{
-	margin-left: 5%;
+	margin: 0 15px;
+}
+.sns-nav li:last-child {
+    margin-right: 0;
 }
 .sns-nav img{
 	width: 25px;
+	margin: 0 10px;
 }
 .site-nav,
 .sns-nav{
@@ -83,7 +86,7 @@ header{
 	margin: 30px auto;
 }
 .news-list li{
-	width: 80%;
+	width: 60%;
 	margin: 30px auto;
 }
 .news-list a{
@@ -104,7 +107,7 @@ header{
 	width: 60%;
 }
 .news-more{
-	width: 80%;
+	width: 60%;
 	text-align: end;
 	margin: 0 auto;
 }
@@ -152,7 +155,7 @@ header{
 	display: flex;
 	justify-content: center;
 }
-.footer-info{
+.footer-info-environment{
 	width: 100%;
 	margin: 30px auto;
 	display: flex;
@@ -185,7 +188,7 @@ header{
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #000;
+    background-color: #e95512;
     position: absolute;
     transition: all 0.3s;
 }
@@ -215,13 +218,17 @@ header{
 .hamburger-check:checked ~ .hamburger span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
-
+.shop-info-sp{
+	display: inline-blockblock;
+}
 /* レスポンシブ */
 @media (max-width: 400px) {
     .hamburger {
         display: block;
+		position: fixed;
+		top: 35px;
+		right: 40px;
     }
-
     .all-nav {
         position: fixed;
         top: 0;
@@ -237,28 +244,69 @@ header{
     .hamburger-check:checked ~ .all-nav {
         right: 0;
     }
-
     .site-nav {
         flex-direction: column;
         margin: 0;
         width: 100%;
     }
-
     .site-nav li {
         margin: 20px 0;
     }
-
     .site-nav li img {
-        width: 200px;
+        width: 100px;
     }
-
     .sns-nav {
-        margin-top: 40px;
+        margin: 40px auto;
         justify-content: center;
     }
-
+	.sns-nav img{
+		width: 100px;
+		margin: 0 20px;
+	}
     .header-logo {
         width: 200px;
         min-width: 200px;
     }
+	.header{
+		margin: 30px auto 20px auto;
+	}
+	.news-list a{
+		flex-direction: column;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.news-list li{
+		width: 100%;
+	}
+	.news-title,
+	.news-list p{
+		width: 90%;
+		margin: 0 auto;
+	}
+	.news-title{
+		margin-bottom: 40px;
+	}
+	.shop-info{
+		width: 80%;
+	}
+	.shop-info-sp{
+		display: none;
+	}
+	.concept ul{
+		flex-direction: column;
+	}
+	.concept img{
+		width: 80%;
+	}
+	.footer-info{
+		display: flex;
+		margin: 40px auto;
+		width: 60%;
+	}
+	.footer-info-environment{
+		width: 90%;
+		margin: 0 auto;
+		gap: 30px;
+	}
 }
