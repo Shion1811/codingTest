@@ -1,0 +1,264 @@
+@charset "utf-8";
+
+/*共通事項
+--------------------*/
+html{
+	font-size: 100%;
+}
+body{
+	color: #111;
+	line-height: 1.8;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+	transition: 0.2s;
+}
+a:hover{
+	opacity: 0.5;
+	transition: 0.3s;
+}
+:root{
+	--h1:32px,font-family: 'Noto Sans JP', sans-serif;
+	--h2:24px,font-family: 'Noto Sans JP', sans-serif;
+	--h3:18px,font-family: 'Noto Sans JP', sans-serif;
+	--p:14px,font-family: 'sans-serif', sans-serif ;
+	
+}
+
+/*header*/
+header{
+	display: flex;
+	width: 80%;
+	margin: 30px auto;
+	justify-content: space-between;
+	position: relative;
+}
+.header-logo {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.all-nav{
+	display: flex;
+}
+.site-nav{
+	display: flex;
+	align-items: center;
+	margin-left: 50%;
+}
+.site-nav li {
+    margin-right: 20px;
+}
+.site-nav li img {
+    width: 300px;
+}
+.site-nav li:last-child {
+    margin-right: 10px;
+}
+.sns-nav{
+	text-align: right;
+	display: flex;
+	justify-content: flex-end;
+}
+.sns-nav li{
+	margin-left: 5%;
+}
+.sns-nav img{
+	width: 25px;
+}
+.site-nav,
+.sns-nav{
+	display: flex;
+	width: 40%;
+}
+/* main */
+.news h2{
+	font-size: var(--h2);
+	text-align: center;
+	margin: 30px auto;
+}
+.news-list li{
+	width: 80%;
+	margin: 30px auto;
+}
+.news-list a{
+	display: flex;
+	justify-content: space-between;
+}
+.news-list p{
+	font-size: var(--p);
+}
+.news-title:hover{
+	opacity: 1;
+	border-bottom: 1px solid #000;
+	/* hover時にテキストに応じて幅が変わるようにしたい */
+	width: 50%; 
+	display: block;
+}
+.news-title{
+	width: 60%;
+}
+.news-more{
+	width: 80%;
+	text-align: end;
+	margin: 0 auto;
+}
+.news-more a{
+	width: 100px;
+	margin: 30px auto;
+	display: inline-block;
+}
+.shop-info{
+	width: 30%;
+	margin: 30px auto;
+	text-align: center;
+	border: 1px solid #000;
+}
+.shop-info h3{
+	font-size: var(--h3);
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.concept{
+	width: 80%;
+	margin: 30px auto;
+}
+.concept ul{
+	display: flex;
+	justify-content: space-between;
+}
+.concept img{
+	width: 50%;
+	margin: 30px auto;
+}
+
+/* footer */
+.footer-info{
+	width: 15%;
+	margin: 30px auto;
+	display: flex;
+	justify-content: space-between;
+}
+.footer-logo{
+	width: 100%;
+	margin: 30px auto;
+	display: flex;
+	justify-content: center;
+}
+.footer-info{
+	width: 100%;
+	margin: 30px auto;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.copyright{
+	width: 100%;
+	margin: 30px auto 0;
+	display: flex;
+	justify-content: center;
+}
+
+/* ハンバーガーメニュー */
+.hamburger-check {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+/* チェックボックスがチェックされた時のスタイル */
+.hamburger-check:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-check:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-check:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* レスポンシブ */
+@media (max-width: 400px) {
+    .hamburger {
+        display: block;
+    }
+
+    .all-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        padding: 80px 20px;
+        transition: all 0.3s;
+        flex-direction: column;
+    }
+
+    .hamburger-check:checked ~ .all-nav {
+        right: 0;
+    }
+
+    .site-nav {
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+    }
+
+    .site-nav li {
+        margin: 20px 0;
+    }
+
+    .site-nav li img {
+        width: 200px;
+    }
+
+    .sns-nav {
+        margin-top: 40px;
+        justify-content: center;
+    }
+
+    .header-logo {
+        width: 200px;
+        min-width: 200px;
+    }
+}
