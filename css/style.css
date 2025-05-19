@@ -86,7 +86,7 @@ header{
 	margin: 30px auto;
 }
 .news-list li{
-	width: 60%;
+	width: 50%;
 	margin: 30px auto;
 }
 .news-list a{
@@ -100,14 +100,14 @@ header{
 	opacity: 1;
 	border-bottom: 1px solid #000;
 	/* hover時にテキストに応じて幅が変わるようにしたい */
-	width: 50%; 
+	width: 70%; 
 	display: block;
 }
 .news-title{
-	width: 60%;
+	width: 70%;
 }
 .news-more{
-	width: 60%;
+	width: 50%;
 	text-align: end;
 	margin: 0 auto;
 }
@@ -120,14 +120,16 @@ header{
 	width: 30%;
 	margin: 30px auto;
 	text-align: center;
-	border: 1px solid #000;
+	border: 2px solid #000;
+	border-radius: 5px;
 }
-.shop-info h3{
-	font-size: var(--h3);
+.shop-info a{
+	font-size: var(--p);
 	height: 40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 25px;
 }
 .concept{
 	width: 80%;
